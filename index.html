@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"><script src="chrome-extension://fgkojgifbdaadmodbppebpghpololldg/js/ajax-listener-other.js"></script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/icon.png" type="image/png">
+    <title>呆呆酱，属于你的二次元机器人</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      @font-face {
+        font-family: "huamifont";
+        src: url(https://oss.borling.daydayupup.com/ddup/huamifont.ttf);
+      }
+      @font-face {
+        font-family: "Poppins";
+        src: url(https://oss.borling.daydayupup.com/ddup/Poppins.ttf);
+      }
+      @font-face {
+        font-family: "SourceHanSansCN";
+        src: url(https://oss.borling.daydayupup.com/ddup/SourceHanSansCN.otf);
+      }
+      html,
+      body {
+        height: 100%;
+        background: #ffffff;
+        font-family: "SourceHanSansCN";
+      }
+      .header {
+        position: relative;
+        height: 60px;
+        background: linear-gradient(-45deg, #fb181c 0%, #8025fa 100%);
+        text-align: center;
+        font-size: 24px;
+        font-family: "Poppins";
+        font-weight: 500;
+        color: #ffffff;
+        line-height: 60px;
+      }
+      .slogn-cn {
+        font-family: "SourceHanSansCN";
+      }
+      .mb-bg-box {
+        display: none;
+      }
+      .pc-logo {
+        width: 122px;
+        height: 33px;
+        position: absolute;
+        top: 12px;
+        left: 176px;
+      }
+      .content {
+        position: relative;
+        min-height: calc(100% - 160px);
+      }
+      .qr-info {
+        position: absolute;
+        top: 116px;
+        left: 167px;
+      }
+      .qr-boxs {
+        display: flex;
+      }
+      .qr-miniprogram {
+        margin-right: 30px;
+      }
+      .qr {
+        width: 112px;
+        height: 112px;
+      }
+      .qr-text {
+        padding: 0 0 10px 9px;
+        font-size: 9px;
+        font-weight: 400;
+        color: #000000;
+        line-height: 1.2;
+      }
+      .qr-img {
+        width: 100%;
+        height: 100%;
+      }
+      .phone {
+        padding: 23px 0 0 9px;
+        font-weight: 400;
+        color: #000000;
+      }
+      .phone-info {
+        font-size: 9px;
+        margin-bottom: 15px;
+      }
+      .phone-no {
+        font-family: "huamifont";
+        font-size: 36px;
+        line-height: 1;
+        display: none;
+      }
+      .phone-tips {
+        font-size: 7px;
+      }
+      .pc-bg-box {
+        overflow: hidden;
+      }
+      .pc-bg {
+        width: 100%;
+        margin-top: -60px;
+      }
+      .footer {
+        text-align: center;
+        height: 60px;
+        padding: 20px 20px;
+      }
+      .footer a {
+        color: #000000;
+        text-decoration: none;
+      }
+      @media only screen and (min-width: 2500px) {
+        .pc-logo {
+          left: 200px;
+        }
+        .qr-info {
+          top: 220px;
+          left: 200px;
+        }
+        .qr-text {
+          font-size: 24px;
+          padding: 0 0 20px 9px;
+        }
+        .qr {
+          width: 240px;
+          height: 240px;
+        }
+
+        .phone {
+          padding: 64px 0 0 9px;
+        }
+        .phone-info {
+          font-size: 24px;
+          margin-bottom: 30px;
+        }
+        .phone-no {
+          font-size: 54px;
+        }
+        .phone-tips {
+          font-size: 24px;
+        }
+      }
+      @media only screen and (min-width: 1800px) and (max-width: 2500px) {
+        .qr-info {
+          top: 200px;
+        }
+        .qr-text {
+          font-size: 20px;
+          padding: 0 0 20px 9px;
+        }
+        .qr {
+          width: 200px;
+          height: 200px;
+        }
+
+        .phone {
+          padding: 54px 0 0 9px;
+        }
+        .phone-info {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        .phone-no {
+          font-size: 48px;
+        }
+        .phone-tips {
+          font-size: 20px;
+        }
+      }
+
+      @media only screen and (max-width: 1800px) and (min-width: 1400px) {
+        .qr-info {
+          top: 160px;
+        }
+        .qr-text {
+          font-size: 14px;
+        }
+        .qr {
+          width: 132px;
+          height: 132px;
+        }
+
+        .phone {
+          padding: 44px 0 0 9px;
+        }
+        .phone-info {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+        .phone-no {
+          font-size: 40px;
+        }
+        .phone-tips {
+          font-size: 14px;
+        }
+      }
+      @media only screen and (max-width: 1400px) {
+        .pc-logo {
+          left: 100px;
+        }
+        .qr-info {
+          left: 100px;
+        }
+      }
+      @media only screen and (max-width: 960px) {
+        .header span {
+          display: none;
+        }
+        .header .pc-logo {
+          position: static;
+          vertical-align: middle;
+        }
+        .content {
+          display: flex;
+          flex-direction: column;
+        }
+        .qr-info {
+          position: static;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .qr-box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .qr-text {
+          padding-left: 0;
+        }
+        .mb-bg-box {
+          display: block;
+          width: 100%;
+          overflow: hidden;
+        }
+        .mb-bg {
+          width: 100%;
+        }
+        .phone {
+          padding-left: 0;
+          padding-bottom: 50px;
+          text-align: center;
+        }
+        .pc-bg-box {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body inject_video_svd="true">
+    <header class="header">
+      <span>Daydayupup <span class="slogn-cn">呆呆酱</span></span>
+      <img class="pc-logo" src="./img/pc-logo.png">
+    </header>
+    <div class="content">
+      <div class="mb-bg-box">
+        <img class="mb-bg" src="./img/mb-bg.png" alt="" srcset="">
+      </div>
+      <div class="qr-info">
+        <div class="qr-boxs">
+          <div class="qr-box qr-miniprogram">
+            <div class="qr-text">
+              手机微信扫一扫<br>
+              关注呆呆酱官方服务号
+            </div>
+            <div class="qr">
+              <img class="qr-img" src="./img/qr-wx.jpg" alt="呆呆酱官方服务码" srcset="">
+            </div>
+          </div>
+          <div class="qr-box qr-gongzhonghao">
+            <div class="qr-text">
+              手机QQ扫一扫<br>
+              进入呆呆酱官方频道
+            </div>
+            <div class="qr">
+              <img class="qr-img" src="./img/qr-pd.png" alt="呆呆酱官方频道二维码" srcset="">
+            </div>
+          </div>
+        </div>
+        <div class="phone">
+          <div class="phone-info">哔哩哔哩：@呆呆酱Official</div>
+          <div class="phone-tips">
+            欢迎您的关注！
+          </div>
+        </div>
+      </div>
+      <div class="pc-bg-box">
+        <img class="pc-bg" src="./img/pc-bg.png" alt="" srcset="">
+      </div>
+    </div>
+    <footer class="footer">
+      <a href="https://beian.miit.gov.cn/#/Integrated/index" class="button_left_a"> Copyright © 呆呆阿卜. All Rights
+        Reserved 苏ICP备2022030483号-2</a>
+    </footer>
